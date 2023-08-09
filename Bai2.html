@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="enterString">Mời nhập</label>
+    <input id="enterString" type="text" placeholder="Mời nhập chuỗi kí tự bất kì"> <br>
+    <label for="showResult">Hiển thị kết quả:</label>
+    <div id="showResult"></div>
+    <button onclick="showResult()">Gửi kết quả</button>
+    <script>
+        /* Body Area */
+        function showResult() {
+            var enterValue = document.getElementById("enterString").value;
+            var result = enterValue.toLowerCase().split(" ");
+            let str = '';
+            //  console.log(result);
+            for(let i = 0; i < result.length; i++){
+                result[i]= result[i][0].toUpperCase() + result[i].slice(1)
+                str += result[i] +  " "
+            }
+            document.getElementById("showResult").innerHTML = str;
+        }
+    </script>
+</body>
+</html>
